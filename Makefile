@@ -1,12 +1,7 @@
-.PHONY: help build build-no-cache up start down destroy terminal
+.SILENT .PHONY: help build build-no-cache up start down destroy terminal tests phpstan
 
-help:
-	@echo "Usage:"
-	@echo "  make build   	- Build the Docker images"
-	@echo "  make up      	- Start the Docker containers"
-	@echo "  make down    	- Stop the Docker containers"
-	@echo "  make destroy 	- Remove the Docker containers and volumes"
-	@echo "  make terminal 	- Enter the php terminal"
+help: ## Shows this help
+	@grep -E '^[a-zA-Z0-9 -]+:.*##' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*##"}; {printf "\033[1;32m%-15s\033[0m %s\n", $$1, $$2}'
 
 build-no-cache:
 	 NO_CACHE="--no-cache"
@@ -17,13 +12,20 @@ build:
 up:
 	docker-compose up -d
 
-start: build-no-cache up
+start: ## Build the docker images and start the docker containers
+	build-no-cache up
 
-down:
+down: ## Stop the docker containers
 	docker-compose down
 
-destroy:
+destroy: ## Remove the docker containers and volumes
 	docker-compose down -v --rmi all
 
-terminal:
-	docker exec -it api bash
+terminal: # Enter web terminal
+	docker exec -it web bash
+
+tests: # Run tests (phpstan)
+	phpstan
+
+phpstan:
+	vendor/bin/phpstan analyze

@@ -3,7 +3,7 @@
 This is just a skeleton I use for my own projects. The idea is to add more base functionalities in here.
 
 - [ ] PHPUnit
-- [ ] PHPStan
+- [X] PHPStan
 - [ ] Behat
 
 ## How to make it work
