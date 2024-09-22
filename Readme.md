@@ -6,7 +6,7 @@ This is just a skeleton I use for my own projects. The idea is to add more base 
   - [ ] Coverage
 - [X] PHPStan
 - [ ] Behat
-- [] PHP CS Fixer
+- [ ] PHP CS Fixer
 
 ## How to make it work
 
