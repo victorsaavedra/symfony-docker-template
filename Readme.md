@@ -3,10 +3,12 @@
 This is just a skeleton I use for my own projects. The idea is to add more base functionalities in here.
 
 - [X] PHPUnit
-  - [ ] Coverage
+  - [X] Coverage
 - [X] PHPStan
 - [ ] Behat
-- [ ] PHP CS Fixer
+- [X] PHP CS Fixer
+- [X] PHP Code Sniffer
+- [X] Xdebug
 
 ## How to make it work
 

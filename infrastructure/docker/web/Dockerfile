@@ -1,5 +1,5 @@
 # Use the official PHP 8.3 Apache image
-FROM php:8.3-apache as common
+FROM php:8.3-apache AS base
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -33,3 +33,10 @@ WORKDIR /var/www/html
 
 # Expose port 80
 EXPOSE 80
+
+FROM base AS development
+# Install XDebug
+RUN pecl install xdebug
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+
+FROM base AS performance
