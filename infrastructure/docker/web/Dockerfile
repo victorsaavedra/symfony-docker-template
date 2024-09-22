@@ -1,5 +1,5 @@
 # Use the official PHP 8.3 Apache image
-FROM php:8.3-apache
+FROM php:8.3-apache as common
 
 RUN apt-get update && apt-get install -y \
     git \

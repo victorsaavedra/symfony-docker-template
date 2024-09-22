@@ -2,9 +2,11 @@
 
 This is just a skeleton I use for my own projects. The idea is to add more base functionalities in here.
 
-- [ ] PHPUnit
+- [X] PHPUnit
+  - [ ] Coverage
 - [X] PHPStan
 - [ ] Behat
+- [] PHP CS Fixer
 
 ## How to make it work
 

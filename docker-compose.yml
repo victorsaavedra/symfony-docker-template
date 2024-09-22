@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   web:
     build:
       context: ./infrastructure/docker/web
       dockerfile: Dockerfile
-    container_name: api
+    container_name: web
     ports:
       - "8080:80"
     volumes:
@@ -13,11 +11,11 @@ services:
     networks:
       - skeleton
     depends_on:
-      - db
+      - database
 
-  db:
+  database:
     image: mysql:8.0
-    container_name: db
+    container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: symfony
