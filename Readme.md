@@ -5,7 +5,7 @@ This is just a skeleton I use for my own projects. The idea is to add more base 
 - [X] PHPUnit
   - [X] Coverage
 - [X] PHPStan
-- [ ] Behat
+- [X] Behat
 - [X] PHP CS Fixer
 - [X] PHP Code Sniffer
 - [X] Xdebug

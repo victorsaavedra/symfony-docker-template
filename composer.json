@@ -97,6 +97,7 @@
         }
     },
     "require-dev": {
+        "friends-of-behat/symfony-extension": "^2.0",
         "friendsofphp/php-cs-fixer": "^3.64",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-symfony": "^1.4",

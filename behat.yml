@@ -1,0 +1,12 @@
+default:
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                environment: test
+                path: tests/bootstrap.php
+                class: App\Kernel
+
+    suites:
+        demo:
+            contexts: [ App\Tests\Integration\Context\DemoContext ]
+            paths: [ '%paths.base%/tests/Integration/Features' ]

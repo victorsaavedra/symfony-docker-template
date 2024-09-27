@@ -1,4 +1,17 @@
 services:
+  web-test:
+    build:
+      context: ./infrastructure/docker/web
+      dockerfile: Dockerfile
+    container_name: web-test
+    ports:
+      - "8181:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - skeleton-test
+    depends_on:
+      - database-test
 
   database-test:
     image: mysql:8.0
@@ -13,4 +26,11 @@ services:
     volumes:
       - db_data:/var/lib/mysql2
     networks:
-      - skeleton
+      - skeleton-test
+
+volumes:
+  db_data:
+
+networks:
+  skeleton-test:
+    driver: bridge
