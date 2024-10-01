@@ -2,3 +2,4 @@ services:
   web:
     build:
       target: performance
+    container_name: web

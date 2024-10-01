@@ -2,3 +2,4 @@ services:
   web:
     build:
       target: development
+    container_name: web
