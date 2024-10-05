@@ -9,6 +9,7 @@ This is just a skeleton I use for my own projects. The idea is to add more base 
 - [X] PHP CS Fixer
 - [X] PHP Code Sniffer
 - [X] Xdebug
+- [ ] Symfony Mailer
 
 ## How to make it work
 

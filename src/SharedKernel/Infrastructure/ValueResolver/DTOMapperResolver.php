@@ -33,7 +33,7 @@ final readonly class DTOMapperResolver implements ValueResolverInterface
             return [];
         }
 
-        [$controllerClass, $method] = explode('::', $controllerString);
+        $controllerClass = explode('::', $controllerString)[0];
 
         if (!is_a($controllerClass, ControllerInterface::class, true)) {
             return [];
